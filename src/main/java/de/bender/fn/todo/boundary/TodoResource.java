@@ -172,7 +172,7 @@ public class TodoResource {
         return new JSONObject()
                 .put("completed", todo.getCompleted())
                 .put("description", todo.getDescription())
-                .put("createdAt", todo.getTimestamp())
+                .put("createdAt", todo.getTimestamp().getTime())
                 .put("id", todo.getRowKey()); // that's so weird - the prop is filled, the API-field is null?!
     }
 

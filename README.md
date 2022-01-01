@@ -82,7 +82,7 @@ In order to use the [maven-plugin behind a proxy][mvn-plugin] (especially when t
 # you might still write into the remote storage)
 mvn clean package azure-functions:run
 
-# build and deploy to azure
+# build and deploy to azure - use the proxy-settings if you're behind an enterprise-proxy
 mvn clean package azure-functions:deploy \
   -Dhttps.proxyHost=http://proxy.muc \
   -Dhttps.proxyPort=8080 \
