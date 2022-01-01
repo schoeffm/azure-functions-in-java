@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "indexServingProxy": {
+      "matchCondition": {
+        "methods": [ "GET" ],
+        "route": "/index.html"
+      },
+      "backendUri": "https://stfnwebapptest.z6.web.core.windows.net/index.html"
+    },
+    "webAppServingProxy": {
+      "matchCondition": {
+        "methods": [ "GET" ],
+        "route": "/app/app.js"
+      },
+      "backendUri": "https://stfnwebapptest.z6.web.core.windows.net/app.js",
+      "responseOverrides": {
+        "response.headers.Content-Type": "application/javascript"
+      }
+    }
+  }
+}
