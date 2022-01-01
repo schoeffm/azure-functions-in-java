@@ -6,16 +6,26 @@
         "methods": [ "GET" ],
         "route": "/index.html"
       },
-      "backendUri": "https://stfnwebapptest.z6.web.core.windows.net/index.html"
+      "backendUri": "https://591a42b817df4d939d39.z6.web.core.windows.net/index.html"
     },
-    "webAppServingProxy": {
+    "jsServingProxy": {
       "matchCondition": {
         "methods": [ "GET" ],
         "route": "/app/app.js"
       },
-      "backendUri": "https://stfnwebapptest.z6.web.core.windows.net/app.js",
+      "backendUri": "https://591a42b817df4d939d39.z6.web.core.windows.net/app.js",
       "responseOverrides": {
         "response.headers.Content-Type": "application/javascript"
+      }
+    },
+    "cssServingProxy": {
+      "matchCondition": {
+        "methods": [ "GET" ],
+        "route": "/app/style.css"
+      },
+      "backendUri": "https://591a42b817df4d939d39.z6.web.core.windows.net/style.css",
+      "responseOverrides": {
+        "response.headers.Content-Type": "text/css"
       }
     }
   }

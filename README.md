@@ -157,14 +157,9 @@ The `proxies.json` file has to be included in the staging-directory that is used
 To bypass those restrictions I used the [standard maven resources plugin](https://maven.apache.org/plugins/maven-resources-plugin/examples/copy-resources.html) to copy the `proxies.json` file over to the staging directory (by default that's `${project.basedir}/target/azure-functions/${function-app-name}/` - see [here](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Package)) during `package`-phase
 
 ### Providing also a Web-UI
-Since the purpose of this repo was to get familiar with functions I wasn't so keen on getting into the creation of a beautiful, full-function web-app. Hence, I just sketched things out a bit (and didn't even automate its creation).
+Since the purpose of this repo was to get familiar with azure functions I wasn't so keen on getting into the creation of a beautiful, full-function web-app. Hence, I just sketched things out a bit.
 
-- create a Storage-Account and enable the _Static website_ feature
-  - note the _Primary endpoint_ for this static web-page (this is the URL we'll proxying to - see `backendUri` in the above JSON-structure) 
-  - this adds a `$web`-container to the blob-section of your storage account
-- add both files `src/main/resources/app.js` as well as `src/main/resources/index.html` to that `$web`-container
-
-That's it!
+If you'd like to test the proxy and how a single-page works with that have a look into `fn-todo-gui` 
 
 [local-setting]:https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-local#local-settings-file
 [msft-docs-java]:https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java
